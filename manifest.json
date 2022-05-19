@@ -1,0 +1,10 @@
+{
+  "name": "Awesome Plugin",
+  "id": "1108464522542518982",
+  "api": "1.0.0",
+  "main": "dist/controller.js",
+  "editorType": [
+    "figjam"
+  ],
+  "ui": "dist/ui.html"
+}
