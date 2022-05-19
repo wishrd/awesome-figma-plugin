@@ -2,10 +2,10 @@ import '../styles/styles.scss';
 
 import * as React from 'react';
 
-const App = ({}) => {
+const Detail = ({}) => {
     return (
-        <div>Hello world!</div>
+        <div>Detail! as asdasd</div>
     );
 };
 
-export default App;
+export default Detail;

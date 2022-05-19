@@ -50,14 +50,13 @@ module.exports = (_env, argv) => {
         },
         // Tells Webpack to generate "ui.html" and to inline "ui.ts" into it
         plugins: [
-            new webpack.DefinePlugin(dotenv.config().parsed),
+          new webpack.DefinePlugin(dotenv.config().parsed),
             new HtmlWebpackPlugin({
                 template: './src/ui/index.html',
                 filename: 'ui.html',
-                inlineSource: '.(js)$',
                 chunks: ['ui'],
                 inject: 'body',
-                scriptLoading: 'blocking'
+                cache: false
             }),
             new HtmlInlineScriptPlugin()
         ],
