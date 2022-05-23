@@ -1,3 +1,5 @@
+import '../styles/styles.scss';
+
 import * as React from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { Routes, Route, MemoryRouter } from 'react-router-dom';

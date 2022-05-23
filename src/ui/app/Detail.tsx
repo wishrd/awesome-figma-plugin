@@ -1,5 +1,3 @@
-import '../styles/styles.scss';
-
 import * as React from 'react';
 import { Link, useParams } from 'react-router-dom';
 
