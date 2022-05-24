@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { Env } from '../env';
 
 const Detail = ({}) => {
   const { eventId } = useParams();
   const [event, setEvent] = React.useState(null);
 
   React.useEffect(() => {
-    fetch('https://my-json-server.typicode.com/wishrd/awesome-figma-plugin-db/events/' + eventId, {
+    fetch(`${Env.API_BASE}/events/${eventId}`, {
       method: 'GET',
       headers: {
         accept: 'application/json',
