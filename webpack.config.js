@@ -4,6 +4,14 @@ const dotenv = require('dotenv');
 const webpack = require('webpack');
 const path = require('path');
 
+function getEnvVars() {
+  const envVars = dotenv.config().parsed;
+  return Object.keys(envVars).reduce((obj, key) => {
+    obj[key] = JSON.stringify(envVars[key]);
+    return obj;
+  }, {});
+}
+
 module.exports = (_env, argv) => {
     return {
         mode: argv.mode === 'production' ? 'production' : 'development',
@@ -50,7 +58,7 @@ module.exports = (_env, argv) => {
         },
         // Tells Webpack to generate "ui.html" and to inline "ui.ts" into it
         plugins: [
-          new webpack.DefinePlugin(dotenv.config().parsed),
+          new webpack.DefinePlugin(getEnvVars()),
             new HtmlWebpackPlugin({
                 template: './src/ui/index.html',
                 filename: 'ui.html',
