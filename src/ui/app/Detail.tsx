@@ -1,3 +1,5 @@
+import './Detail.scss';
+
 import * as React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Env } from '../env';
@@ -42,12 +44,12 @@ const Detail = ({}) => {
 
   return (
     <div>
-      <h1><Link to="/">Back</Link> {event?.name}</h1>
-      <dl>
+      <h1 className="detail-title"><span>{event?.name}</span><Link to="/">Go back</Link></h1>
+      <dl className="detail">
         <dt>Name</dt>
-        <dd onClick={() => setEventText(event?.name)}>{event?.name}</dd>
+        <dd className="detail__item" onClick={() => setEventText(event?.name)}>{event?.name}</dd>
         <dt>Image</dt>
-        <dd><img src={event?.image} width="100" height="100" onClick={() => setEventImage(event?.image)} /></dd>
+        <dd><img className="detail__item" src={event?.image} width="100" height="100" onClick={() => setEventImage(event?.image)} /></dd>
       </dl>
     </div>
   );

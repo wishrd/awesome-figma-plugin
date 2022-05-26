@@ -1,7 +1,7 @@
 import { setNodeText } from './utils/set-node-text';
 import { setNodeImage } from './utils/set-node-image';
 
-figma.showUI(__html__);
+figma.showUI(__html__, { width: 360, height: 400 });
 
 figma.ui.onmessage = msg => {
   const node = figma.currentPage.selection[0];

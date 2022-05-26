@@ -1,3 +1,5 @@
+import './Home.scss';
+
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { Env } from '../env';
@@ -19,9 +21,9 @@ const Home = ({}) => {
   return (
     <div>
       <h1>Our events!</h1>
-      <ul>
+      <ul className="list">
         {events.map(event => (
-          <li key={event.id}>
+          <li className="list__item" key={event.id}>
             <Link to={`/events/${event.id}`}>{event.name}</Link>
           </li>
         ))}
