@@ -39,7 +39,6 @@ const Detail = ({}) => {
         }
       }, '*');
     });
-
   }
 
   return (
